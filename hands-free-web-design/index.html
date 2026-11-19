@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="midnight">
+<head>
+  <script>
+    (function () {
+      var allowed = ['midnight', 'pine-sand', 'sunset', 'high-desert', 'neon'];
+      var theme = 'midnight';
+      try { theme = localStorage.getItem('hf-theme') || 'midnight'; } catch (e) {}
+      if (allowed.indexOf(theme) === -1) theme = 'midnight';
+      document.documentElement.setAttribute('data-theme', theme);
+      var colors = {
+        midnight: '#101412',
+        'pine-sand': '#14261e',
+        sunset: '#140c0a',
+        'high-desert': '#141210',
+        neon: '#09090f'
+      };
+      var meta = document.querySelector('meta[name="theme-color"]');
+      if (meta) meta.setAttribute('content', colors[theme] || colors.midnight);
+    })();
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hands Free Web Design | Websites for Central Oregon</title>
+  <meta name="description" content="Websites for Central Oregon businesses and vacation rentals, built and cared for by a Redmond local. $350 setup, optional $60/month care plan. So you don't have to lift a finger.">
+  <meta name="author" content="Michael Carlson">
+  <meta name="theme-color" content="#14261e">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Hands Free Web Design | Websites for Central Oregon">
+  <meta property="og:description" content="Websites for Central Oregon businesses and vacation rentals, built and cared for by a Redmond local. $350 setup, optional $60/month care plan. So you don't have to lift a finger.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Hands Free Web Design — So you don't have to lift a finger.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Hands Free Web Design | Websites for Central Oregon">
+  <meta name="twitter:description" content="Websites for Central Oregon businesses and vacation rentals, built and cared for by a Redmond local. So you don't have to lift a finger.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Hands Free Web Design",
+    "slogan": "So you don't have to lift a finger.",
+    "description": "Websites for Central Oregon businesses and vacation rentals, built and cared for by a Redmond local.",
+    "telephone": "+1-503-951-8895",
+    "email": "Carlson.michael@ymail.com",
+    "areaServed": ["Bend, OR", "Redmond, OR", "Sisters, OR", "Sunriver, OR", "Central Oregon"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Redmond",
+      "addressRegion": "OR",
+      "addressCountry": "US"
+    },
+    "founder": {
+      "@type": "Person",
+      "name": "Michael Carlson"
+    },
+    "priceRange": "$$"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#14261e"/>
+          <circle cx="27" cy="13" r="6.2" fill="#e0a45a"/>
+          <path d="M3.5 32.5 L15.5 15.5 L22 25 L28.5 13.5 L37 32.5 Z" fill="#8fa37a"/>
+          <path d="M3.5 32.5 L15.5 15.5 L22 25 L13 32.5 Z" fill="#2a4f3d"/>
+          <path d="M17.2 15.2 L18.6 18.2 L15.5 15.5 Z" fill="#f3ebe0"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Hands Free</span>
+          <span class="brand-sub">Web Design</span>
+        </span>
+      </a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#how-it-works">How it works</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#animations">Motion</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li class="nav-mobile-cta"><a class="btn btn-primary btn-sm" href="tel:+15039518895">Call or text</a></li>
+      </ul>
+      <div class="theme-picker">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Choose color theme" aria-expanded="false" aria-controls="theme-menu" aria-haspopup="dialog">
+          <svg class="theme-toggle-icon" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+            <circle cx="10" cy="10" r="7.25" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M10 2.75 V17.25" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M10 2.75 A7.25 7.25 0 0 0 10 17.25 Z" fill="currentColor"/>
+          </svg>
+          <span class="theme-toggle-text">Theme</span>
+        </button>
+        <div class="theme-menu" id="theme-menu" hidden role="dialog" aria-labelledby="theme-menu-title">
+          <p class="theme-menu-title" id="theme-menu-title">Choose a theme</p>
+          <div class="theme-swatches" role="radiogroup" aria-labelledby="theme-menu-title">
+            <label class="theme-swatch">
+              <input type="radio" name="hf-theme" value="midnight" checked>
+              <span class="swatch-colors swatch-midnight" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="swatch-name">Midnight</span>
+            </label>
+            <label class="theme-swatch">
+              <input type="radio" name="hf-theme" value="pine-sand">
+              <span class="swatch-colors swatch-pine-sand" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="swatch-name">Pine &amp; Sand</span>
+            </label>
+            <label class="theme-swatch">
+              <input type="radio" name="hf-theme" value="sunset">
+              <span class="swatch-colors swatch-sunset" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="swatch-name">Sunset</span>
+            </label>
+            <label class="theme-swatch">
+              <input type="radio" name="hf-theme" value="high-desert">
+              <span class="swatch-colors swatch-high-desert" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="swatch-name">High Desert</span>
+            </label>
+            <label class="theme-swatch">
+              <input type="radio" name="hf-theme" value="neon">
+              <span class="swatch-colors swatch-neon" aria-hidden="true"><i></i><i></i><i></i></span>
+              <span class="swatch-name">Neon</span>
+            </label>
+          </div>
+        </div>
+      </div>
+      <p class="visually-hidden" id="theme-status" aria-live="polite"></p>
+      <div class="nav-cta">
+        <a class="btn btn-primary btn-sm" href="tel:+15039518895">Call or text</a>
+      </div>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open menu">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" aria-hidden="true">
+          <path d="M1 1.5h20M1 8h20M1 14.5h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <div class="hero-art" aria-hidden="true">
+        <svg class="hero-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" focusable="false">
+          <defs>
+            <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#121924"/>
+              <stop offset="42%" stop-color="#3a3f58"/>
+              <stop offset="62%" stop-color="#b45a3d"/>
+              <stop offset="76%" stop-color="#e2a45a"/>
+              <stop offset="100%" stop-color="#f0d7b0"/>
+            </linearGradient>
+            <radialGradient id="sunGlow" cx="78%" cy="46%" r="28%">
+              <stop offset="0%" stop-color="#ffe6b0" stop-opacity="0.85"/>
+              <stop offset="40%" stop-color="#e8a05a" stop-opacity="0.35"/>
+              <stop offset="100%" stop-color="#e8a05a" stop-opacity="0"/>
+            </radialGradient>
+            <linearGradient id="farMt" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#d8d4e0"/>
+              <stop offset="55%" stop-color="#8f8aa3"/>
+              <stop offset="100%" stop-color="#6a6478"/>
+            </linearGradient>
+            <linearGradient id="midMt" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5c4a55"/>
+              <stop offset="100%" stop-color="#3a2e38"/>
+            </linearGradient>
+            <linearGradient id="ground" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#5a6a48"/>
+              <stop offset="40%" stop-color="#3d4a35"/>
+              <stop offset="100%" stop-color="#1a2a20"/>
+            </linearGradient>
+          </defs>
+          <rect width="1440" height="900" fill="url(#sky)"/>
+          <circle cx="1120" cy="410" r="320" fill="url(#sunGlow)"/>
+          <circle cx="1120" cy="410" r="62" fill="#f6d7a0"/>
+          <g fill="#f3ebe0" opacity="0.7">
+            <circle cx="180" cy="90" r="1.2"/>
+            <circle cx="260" cy="140" r="1"/>
+            <circle cx="340" cy="70" r="1.4"/>
+            <circle cx="480" cy="120" r="1"/>
+            <circle cx="620" cy="60" r="1.2"/>
+            <circle cx="760" cy="110" r="0.9"/>
+            <circle cx="880" cy="80" r="1.3"/>
+            <circle cx="980" cy="150" r="1"/>
+            <circle cx="1280" cy="90" r="1.2"/>
+            <circle cx="1360" cy="160" r="1"/>
+            <circle cx="200" cy="200" r="0.8"/>
+            <circle cx="520" cy="40" r="0.9"/>
+            <circle cx="700" cy="180" r="0.8"/>
+            <circle cx="1220" cy="50" r="1.1"/>
+          </g>
+          <path fill="url(#farMt)" d="M620 530 L820 310 L890 380 L980 250 L1180 520 L1440 430 L1440 600 L620 600 Z"/>
+          <path fill="#efeaf4" opacity="0.85" d="M980 250 L1018 310 L1036 292 L1060 330 L1088 300 L1180 520 L980 520 Z"/>
+          <path fill="url(#midMt)" d="M480 600 L640 430 L760 520 L900 380 L1100 560 L1440 500 L1440 640 L480 640 Z"/>
+          <path fill="url(#ground)" d="M0 620 C180 600 340 630 520 615 C760 595 980 640 1440 610 L1440 900 L0 900 Z"/>
+          <g fill="#14261e">
+            <path d="M1180 700 L1240 430 L1300 700 Z"/>
+            <path d="M1260 720 L1310 500 L1360 720 Z"/>
+            <path d="M1330 740 L1375 560 L1420 740 Z"/>
+            <path d="M1080 710 L1130 520 L1180 710 Z"/>
+            <path d="M1400 760 L1430 640 L1460 760 Z"/>
+            <path d="M-20 780 L30 620 L80 780 Z"/>
+            <path d="M40 800 L80 660 L120 800 Z"/>
+            <path d="M100 820 L130 720 L160 820 Z"/>
+          </g>
+          <g fill="#0e1a15">
+            <path d="M1210 780 L1280 480 L1350 780 Z"/>
+            <path d="M1300 800 L1355 560 L1410 800 Z"/>
+            <path d="M1380 820 L1420 660 L1460 820 Z"/>
+            <path d="M1120 790 L1175 580 L1230 790 Z"/>
+            <path d="M-40 830 L20 640 L80 830 Z"/>
+            <path d="M50 850 L95 700 L140 850 Z"/>
+          </g>
+          <path fill="#0c1813" opacity="0.9" d="M0 820 C200 800 400 840 700 815 C1000 790 1240 840 1440 820 L1440 900 L0 900 Z"/>
+        </svg>
+      </div>
+      <div class="wrap hero-inner">
+        <p class="eyebrow">Redmond, Oregon</p>
+        <h1 id="hero-title">Hands Free Web Design</h1>
+        <p class="tagline">So you don't have to lift a finger.</p>
+        <p class="hero-lead">Websites for Central Oregon businesses and vacation rentals, built and cared for by a Redmond local.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary btn-lg" href="tel:+15039518895">Call or text</a>
+          <a class="btn btn-secondary btn-lg" href="mailto:Carlson.michael@ymail.com?subject=Website%20inquiry">Email me</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sand" id="how-it-works" aria-labelledby="how-title">
+      <div class="wrap">
+        <p class="eyebrow">A simple process</p>
+        <h2 id="how-title">How it works</h2>
+        <p class="section-lead">You stay focused on your business. I handle the website, from the first demo to the monthly updates.</p>
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Free demo</h3>
+            <p>I build a tailored sample site for your business, at no cost. You can click through it on your phone and share it with anyone you'd like a second opinion from.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>You approve</h3>
+            <p>We adjust the wording, photos, and details until it feels like you. You don't pay unless you want the site to go live.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>It goes live, and I keep it running</h3>
+            <p>Your site goes online on a domain you own. Hosting is free. If you add the care plan, I take care of the updates from there.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="pricing" aria-labelledby="pricing-title">
+      <div class="wrap">
+        <p class="eyebrow">Straightforward pricing</p>
+        <h2 id="pricing-title">What it costs</h2>
+        <p class="section-lead">No platform fees, no surprise invoices. You own the site, and you only pay for the help you want.</p>
+        <div class="price-grid">
+          <article class="price-card price-card-featured">
+            <p class="price-badge">One-time</p>
+            <h3>Setup</h3>
+            <p class="price"><span class="price-amount">$350</span></p>
+            <p>A finished site, built around your business. You own it. Hosting is free. Your only yearly cost is the domain name, usually about $10 to $25.</p>
+          </article>
+          <article class="price-card">
+            <p class="price-badge">Optional</p>
+            <h3>Care plan</h3>
+            <p class="price"><span class="price-amount">$60</span><span class="price-period">/mo</span></p>
+            <p>I keep the site current: updates, rate and menu changes, new photos, and specials. So it stays fresh without landing back on your to-do list.</p>
+          </article>
+          <article class="price-card">
+            <p class="price-badge">If you want it</p>
+            <h3>Social &amp; local content</h3>
+            <p class="price"><span class="price-amount price-ask">Add-on</span></p>
+            <p>Social media posts and local content, if you ever want more reach. I'm happy to talk through what that could look like and quote it separately.</p>
+          </article>
+        </div>
+        <p class="price-note">After setup, the only yearly cost to keep the site online is your domain, usually about $10 to $25. The care plan and content add-on are optional.</p>
+      </div>
+    </section>
+
+    <section class="section section-sand" id="work" aria-labelledby="work-title">
+      <div class="wrap">
+        <p class="eyebrow">Sample designs</p>
+        <h2 id="work-title">A few sites I've put together</h2>
+        <p class="section-lead">These are sample designs for Central Oregon vacation rentals. Yours would be tailored to your business, whether that's a cabin, a cafe, or a shop.</p>
+        <ul class="work-grid">
+          <li>
+            <a class="work-card" href="https://carlsonmichael6453.github.io/Rental-Demos/sunriver-chalet/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/sunriver-chalet.jpg" alt="Sample design for Sunriver Chalet, a cedar chalet in the woods" width="960" height="540">
+              <span class="work-meta">
+                <span class="work-name">Sunriver Chalet</span>
+                <span class="work-place">Sunriver, Oregon</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="work-card" href="https://carlsonmichael6453.github.io/Rental-Demos/a-bend-cottage-experience/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/a-bend-cottage-experience.jpg" alt="Sample design for A Bend Cottage Experience, vacation cottages in Bend" width="960" height="540">
+              <span class="work-meta">
+                <span class="work-name">A Bend Cottage Experience</span>
+                <span class="work-place">Bend, Oregon</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="work-card" href="https://carlsonmichael6453.github.io/Rental-Demos/sunriver-executive-lodge/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/sunriver-executive-lodge.jpg" alt="Sample design for Sunriver Executive Lodge, a large lodge home near Mt. Bachelor" width="960" height="540">
+              <span class="work-meta">
+                <span class="work-name">Sunriver Executive Lodge</span>
+                <span class="work-place">Sunriver, Oregon</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="work-card" href="https://carlsonmichael6453.github.io/Rental-Demos/whitehouse-cottage/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/whitehouse-cottage.jpg" alt="Sample design for The WhiteHouse Cottage, a bungalow in Northwest Crossing, Bend" width="960" height="540">
+              <span class="work-meta">
+                <span class="work-name">The WhiteHouse Cottage</span>
+                <span class="work-place">Bend, Oregon</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="work-card" href="https://carlsonmichael6453.github.io/Rental-Demos/vacation-eagle-crest/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/vacation-eagle-crest.jpg" alt="Sample design for Vacation Eagle Crest, a resort home in Redmond" width="960" height="540">
+              <span class="work-meta">
+                <span class="work-name">Vacation Eagle Crest</span>
+                <span class="work-place">Redmond, Oregon</span>
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class="work-card" href="https://carlsonmichael6453.github.io/Rental-Demos/7-peaks-retreat/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/7-peaks-retreat.jpg" alt="Sample design for 7 Peaks Retreat, a glamping stay near Lake Billy Chinook" width="960" height="540">
+              <span class="work-meta">
+                <span class="work-name">7 Peaks Retreat</span>
+                <span class="work-place">Culver, Oregon</span>
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="who" aria-labelledby="who-title">
+      <div class="wrap">
+        <p class="eyebrow">A good fit for</p>
+        <h2 id="who-title">Who I work with</h2>
+        <p class="section-lead">If people need to find you, book with you, or see what you offer, a simple website helps. I work with owners across Central Oregon, including:</p>
+        <ul class="audience">
+          <li>
+            <span class="audience-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M6 30 L20 10 L34 30Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M15 30 V22 h10 v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8 30 h24" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Vacation rentals</h3>
+            <p>Cabins, cottages, and lodges that want a site they own, with booking that still works the way it does today.</p>
+          </li>
+          <li>
+            <span class="audience-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M8 24 h24 l-2 8 H10 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M12 24 V16 c0-4 16-4 16 0 v8" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="14" cy="34" r="2.2" fill="currentColor"/><circle cx="26" cy="34" r="2.2" fill="currentColor"/></svg>
+            </span>
+            <h3>Food trucks and cafes</h3>
+            <p>A clear menu, hours, and location, so regulars and visitors can find you without hunting through social posts.</p>
+          </li>
+          <li>
+            <span class="audience-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="16" r="6" stroke="currentColor" stroke-width="1.8"/><path d="M10 32 c2-6 8-8 10-8 s8 2 10 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M26 14 c3-1 5 2 3 5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Salons</h3>
+            <p>A polished page for your services, photos, and a simple way for clients to get in touch or book.</p>
+          </li>
+          <li>
+            <span class="audience-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M8 28 l8-2 2-8 6 6 8-4 2 12 H8 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M14 14 l3 3 M22 10 v4 M28 16 l-3 3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </span>
+            <h3>Trades</h3>
+            <p>Contractors, cleaners, and repair shops that want to look established when a neighbor searches their name.</p>
+          </li>
+          <li>
+            <span class="audience-icon" aria-hidden="true">
+              <svg viewBox="0 0 40 40" fill="none"><path d="M8 18 L20 8 L32 18 V32 H8 Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 32 V22 h8 v10" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+            </span>
+            <h3>Shops</h3>
+            <p>Local stores that need hours, a short story, and a way for people to reach you besides a Facebook page.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-sand" id="animations" aria-labelledby="anim-title">
+      <div class="wrap">
+        <p class="eyebrow">Bring your site to life</p>
+        <h2 id="anim-title">Animations I can add to your site</h2>
+        <p class="section-lead">A few kinds of movement I can build into a page, including a silent background video. All of these can be toned down or turned off for visitors who prefer less motion.</p>
+
+        <div class="anim-grid">
+          <article class="anim-card reveal">
+            <div class="anim-stage" aria-hidden="true">
+              <div class="demo-reveal">
+                <span class="demo-reveal-bar"></span>
+                <span class="demo-reveal-bar"></span>
+                <span class="demo-reveal-bar"></span>
+              </div>
+            </div>
+            <h3>Scroll reveal</h3>
+            <p>Blocks fade and slide into view as you scroll down the page.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage" aria-hidden="true">
+              <div class="demo-tilt" data-tilt>
+                <span>Hover me</span>
+              </div>
+            </div>
+            <h3>Hover lift &amp; tilt</h3>
+            <p>Cards lift and tilt slightly as the pointer moves across them.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage demo-gradient" aria-hidden="true"></div>
+            <h3>Animated gradient</h3>
+            <p>A background that slowly shifts color, useful for a hero or a banner.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage demo-type-stage">
+              <p class="demo-type" data-typewriter="So you don't have to lift a finger." aria-label="So you don't have to lift a finger."></p>
+            </div>
+            <h3>Typewriter text</h3>
+            <p>Words appear one letter at a time, as if they're being typed live.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage demo-counter-stage">
+              <p class="demo-counter" data-count="350" data-prefix="$"><span class="demo-counter-value">0</span></p>
+            </div>
+            <h3>Animated counter</h3>
+            <p>A number that counts up, like the $350 setup price on this page.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage demo-parallax" data-parallax aria-hidden="true">
+              <span class="para-sky"></span>
+              <span class="para-sun"></span>
+              <span class="para-mtn para-mtn-back"></span>
+              <span class="para-mtn para-mtn-front"></span>
+              <span class="para-ground"></span>
+            </div>
+            <h3>Parallax layer</h3>
+            <p>Foreground and background move at different speeds as you move the pointer.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage" aria-hidden="true">
+              <svg class="demo-line" viewBox="0 0 120 80" fill="none">
+                <circle class="demo-line-sun" cx="92" cy="22" r="10" pathLength="1"/>
+                <path class="demo-line-path" pathLength="1" d="M8 68 L38 28 L58 48 L78 18 L116 68"/>
+                <path class="demo-line-path" pathLength="1" d="M8 68 H116"/>
+              </svg>
+            </div>
+            <h3>SVG line-draw</h3>
+            <p>A line that traces itself into place, good for a logo or an icon.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage" aria-hidden="true">
+              <svg class="demo-bob brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+                <rect width="40" height="40" rx="10" fill="#14261e"/>
+                <circle cx="27" cy="13" r="6.2" fill="#e0a45a"/>
+                <path d="M3.5 32.5 L15.5 15.5 L22 25 L28.5 13.5 L37 32.5 Z" fill="#8fa37a"/>
+                <path d="M3.5 32.5 L15.5 15.5 L22 25 L13 32.5 Z" fill="#2a4f3d"/>
+                <path d="M17.2 15.2 L18.6 18.2 L15.5 15.5 Z" fill="#f3ebe0"/>
+              </svg>
+            </div>
+            <h3>Floating icon</h3>
+            <p>A gentle bobbing motion that draws the eye without getting in the way.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage" aria-hidden="true">
+              <div class="demo-skeleton">
+                <span class="skel skel-avatar"></span>
+                <span class="skel skel-line"></span>
+                <span class="skel skel-line skel-short"></span>
+                <span class="skel skel-line skel-mid"></span>
+              </div>
+            </div>
+            <h3>Shimmer skeleton</h3>
+            <p>A loading placeholder that shimmers while content is on the way.</p>
+          </article>
+
+          <article class="anim-card reveal">
+            <div class="anim-stage">
+              <button type="button" class="demo-ripple-btn" data-ripple>Tap for a ripple</button>
+            </div>
+            <h3>Button ripple &amp; pulse</h3>
+            <p>A soft pulse on the button, and a ripple that follows a click or tap.</p>
+          </article>
+        </div>
+
+        <figure class="anim-video reveal" id="motion">
+          <figcaption>
+            <p class="anim-video-label">Background video</p>
+            <h3 id="motion-title">A silent looping clip</h3>
+            <p>Short looping videos can make a homepage feel alive. Here's one example of what a silent background clip can do for a site.</p>
+          </figcaption>
+          <video class="motion-video" autoplay muted loop playsinline preload="metadata" poster="assets/video/giant-bird-poster.jpg" aria-label="A giant jet-black bird with glowing purple eyes in a dark cave, looping silently" width="848" height="480">
+            <source src="assets/video/giant-bird.mp4" type="video/mp4">
+          </video>
+        </figure>
+      </div>
+    </section>
+
+
+    <section class="section section-pine" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div>
+          <p class="eyebrow eyebrow-light">A Redmond local</p>
+          <h2 id="about-title">Hi, I'm Michael</h2>
+        </div>
+        <div class="about-copy">
+          <p>I live in Redmond and work in Bend, and I build websites for Central Oregon businesses and vacation-rental hosts. I started Hands Free Web Design for owners who'd rather run their business than wrestle with a website.</p>
+          <p>You get a simple, modern site that you actually own. I handle the design, the launch, and, if you want, the upkeep. If you'd like to see what that could look like for your place, I'll put a free demo together. Call or text anytime. I'm right up the road.</p>
+          <p class="about-signoff">Michael Carlson<br>Redmond, Oregon</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-title">
+      <div class="wrap wrap-narrow">
+        <p class="eyebrow">Common questions</p>
+        <h2 id="faq-title">FAQ</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Do I own the site?</summary>
+            <p>Yes. I build it, and you own it. The domain is in your name, and you're not locked into a platform you don't control.</p>
+          </details>
+          <details>
+            <summary>What does it cost each year?</summary>
+            <p>Hosting is free. Your only yearly cost is the domain name, usually about $10 to $25, depending on where you buy it. The $60 a month care plan is optional, and so is the social and content add-on.</p>
+          </details>
+          <details>
+            <summary>What if I already have a site on GoDaddy or Wix?</summary>
+            <p>I can rebuild it so you own the site and pay less to keep it online. We can time the switch around your current renewal, so you aren't paying twice. Booking, phone numbers, and the links you already use can stay the same.</p>
+          </details>
+          <details>
+            <summary>How fast can it be ready?</summary>
+            <p>I start with a free demo so you can see the design first. Once you approve it and share any photos or details you want included, we can get the site live quickly. I'll give you a clear timeline when we talk.</p>
+          </details>
+          <details>
+            <summary>Do I need to do anything?</summary>
+            <p>As little as you want. I can start from what's already public about your business. If you have photos, a logo, or wording you like, I'll use those. After launch, the care plan covers updates, rate and menu changes, photos, and specials, so you don't have to manage the site yourself.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-sand" id="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-wrap">
+        <p class="eyebrow">Let's talk</p>
+        <h2 id="contact-title">Ready when you are</h2>
+        <p class="section-lead">Call or text, send an email, or both. I'll put together a free demo of what your site could look like, with no obligation.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary btn-lg" href="tel:+15039518895">Call or text (503) 951-8895</a>
+          <a class="btn btn-ghost btn-lg" href="mailto:Carlson.michael@ymail.com?subject=Website%20inquiry">Email Carlson.michael@ymail.com</a>
+        </div>
+        <p class="contact-meta">Michael Carlson · Redmond, Oregon<br>Serving Bend, Redmond, Sisters, Sunriver, and the rest of Central Oregon.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <a class="brand brand-footer" href="#top">
+        <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#14261e"/>
+          <circle cx="27" cy="13" r="6.2" fill="#e0a45a"/>
+          <path d="M3.5 32.5 L15.5 15.5 L22 25 L28.5 13.5 L37 32.5 Z" fill="#8fa37a"/>
+          <path d="M3.5 32.5 L15.5 15.5 L22 25 L13 32.5 Z" fill="#2a4f3d"/>
+          <path d="M17.2 15.2 L18.6 18.2 L15.5 15.5 Z" fill="#f3ebe0"/>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-name">Hands Free Web Design</span>
+          <span class="brand-sub">So you don't have to lift a finger.</span>
+        </span>
+      </a>
+      <p class="footer-contact">
+        <a href="tel:+15039518895">(503) 951-8895</a>
+        <span aria-hidden="true"> · </span>
+        <a href="mailto:Carlson.michael@ymail.com">Carlson.michael@ymail.com</a>
+      </p>
+      <p class="footer-copy">© 2026 Michael Carlson · Redmond, Oregon</p>
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce) document.documentElement.classList.add('reduce-motion');
+
+      var navBtn = document.querySelector('.nav-toggle');
+      var nav = document.getElementById('nav-links');
+      var themeBtn = document.getElementById('theme-toggle');
+      var themeMenu = document.getElementById('theme-menu');
+      var themeStatus = document.getElementById('theme-status');
+      var themeNames = {
+        midnight: 'Midnight',
+        'pine-sand': 'Pine & Sand',
+        sunset: 'Sunset',
+        'high-desert': 'High Desert',
+        neon: 'Neon'
+      };
+      var themeColors = {
+        midnight: '#101412',
+        'pine-sand': '#14261e',
+        sunset: '#140c0a',
+        'high-desert': '#141210',
+        neon: '#09090f'
+      };
+
+      function closeNav() {
+        if (!navBtn || !nav) return;
+        navBtn.setAttribute('aria-expanded', 'false');
+        navBtn.setAttribute('aria-label', 'Open menu');
+        nav.classList.remove('is-open');
+      }
+      function openNav() {
+        closeTheme();
+        navBtn.setAttribute('aria-expanded', 'true');
+        navBtn.setAttribute('aria-label', 'Close menu');
+        nav.classList.add('is-open');
+      }
+      if (navBtn && nav) {
+        navBtn.addEventListener('click', function () {
+          if (navBtn.getAttribute('aria-expanded') === 'true') closeNav();
+          else openNav();
+        });
+        nav.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', closeNav);
+        });
+      }
+
+      function closeTheme() {
+        if (!themeBtn || !themeMenu) return;
+        if (themeMenu.hidden) return;
+        themeMenu.hidden = true;
+        themeBtn.setAttribute('aria-expanded', 'false');
+      }
+      function openTheme() {
+        closeNav();
+        themeMenu.hidden = false;
+        themeBtn.setAttribute('aria-expanded', 'true');
+        var selected = themeMenu.querySelector('input[name="hf-theme"]:checked') || themeMenu.querySelector('input[name="hf-theme"]');
+        if (selected) selected.focus();
+      }
+      function setTheme(theme) {
+        if (!themeNames[theme]) theme = 'midnight';
+        document.documentElement.setAttribute('data-theme', theme);
+        try { localStorage.setItem('hf-theme', theme); } catch (e) {}
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute('content', themeColors[theme]);
+        var radio = document.querySelector('input[name="hf-theme"][value="' + theme + '"]');
+        if (radio) radio.checked = true;
+        if (themeStatus) themeStatus.textContent = 'Theme set to ' + themeNames[theme] + '.';
+      }
+      setTheme(document.documentElement.getAttribute('data-theme') || 'midnight');
+      if (themeBtn && themeMenu) {
+        themeBtn.addEventListener('click', function (e) {
+          e.stopPropagation();
+          if (themeMenu.hidden) openTheme();
+          else closeTheme();
+        });
+        themeMenu.addEventListener('click', function (e) { e.stopPropagation(); });
+        themeMenu.querySelectorAll('input[name="hf-theme"]').forEach(function (input) {
+          input.addEventListener('change', function () { setTheme(input.value); });
+        });
+        document.addEventListener('click', closeTheme);
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+          closeNav();
+          if (themeMenu && !themeMenu.hidden) {
+            closeTheme();
+            if (themeBtn) themeBtn.focus();
+          }
+        }
+      });
+
+      var video = document.querySelector('.motion-video');
+      if (reduce && video) {
+        video.removeAttribute('autoplay');
+        video.pause();
+      }
+
+      var revealEls = document.querySelectorAll('.reveal, .demo-line, .demo-reveal');
+      function inView(el) {
+        el.classList.add('is-in');
+        var type = el.querySelector && el.querySelector('[data-typewriter]');
+        if (type && !type.getAttribute('data-typed')) startTypewriter(type);
+        var counter = el.querySelector && el.querySelector('[data-count]');
+        if (counter && !counter.getAttribute('data-counted')) startCounter(counter);
+      }
+      if (reduce) {
+        revealEls.forEach(inView);
+      } else if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            inView(entry.target);
+            io.unobserve(entry.target);
+          });
+        }, { threshold: 0.28 });
+        revealEls.forEach(function (el) { io.observe(el); });
+      } else {
+        revealEls.forEach(inView);
+      }
+
+      function startTypewriter(el) {
+        var text = el.getAttribute('data-typewriter') || '';
+        el.setAttribute('data-typed', '1');
+        if (reduce) { el.textContent = text; return; }
+        el.textContent = '';
+        var i = 0;
+        (function tick() {
+          i += 1;
+          el.textContent = text.slice(0, i);
+          if (i < text.length) setTimeout(tick, 42);
+        })();
+      }
+
+      function startCounter(el) {
+        var to = parseInt(el.getAttribute('data-count'), 10) || 0;
+        var prefix = el.getAttribute('data-prefix') || '';
+        var valueEl = el.querySelector('.demo-counter-value') || el;
+        el.setAttribute('data-counted', '1');
+        if (reduce) { valueEl.textContent = prefix + to; return; }
+        var start = performance.now();
+        var dur = 1400;
+        (function frame(now) {
+          var t = Math.min(1, (now - start) / dur);
+          t = 1 - Math.pow(1 - t, 3);
+          valueEl.textContent = prefix + Math.round(to * t);
+          if (t < 1) requestAnimationFrame(frame);
+        })(start);
+      }
+
+      if (!reduce) {
+        document.querySelectorAll('[data-tilt]').forEach(function (card) {
+          card.addEventListener('pointermove', function (e) {
+            var r = card.getBoundingClientRect();
+            var x = (e.clientX - r.left) / r.width - 0.5;
+            var y = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transform = 'rotateY(' + (x * 16) + 'deg) rotateX(' + (-y * 16) + 'deg) translateY(-4px)';
+          });
+          card.addEventListener('pointerleave', function () { card.style.transform = ''; });
+        });
+
+        document.querySelectorAll('[data-parallax]').forEach(function (stage) {
+          var layers = [
+            [stage.querySelector('.para-sun'), 10],
+            [stage.querySelector('.para-mtn-back'), 6],
+            [stage.querySelector('.para-mtn-front'), 12],
+            [stage.querySelector('.para-ground'), 4]
+          ];
+          stage.addEventListener('pointermove', function (e) {
+            var r = stage.getBoundingClientRect();
+            var x = (e.clientX - r.left) / r.width - 0.5;
+            var y = (e.clientY - r.top) / r.height - 0.5;
+            layers.forEach(function (item) {
+              if (!item[0]) return;
+              item[0].style.transform = 'translate(' + (x * item[1]) + 'px, ' + (y * item[1] * 0.6) + 'px)';
+            });
+          });
+          stage.addEventListener('pointerleave', function () {
+            layers.forEach(function (item) { if (item[0]) item[0].style.transform = ''; });
+          });
+        });
+
+        document.querySelectorAll('[data-ripple]').forEach(function (btn) {
+          btn.addEventListener('click', function (e) {
+            var r = btn.getBoundingClientRect();
+            var span = document.createElement('span');
+            span.className = 'ripple-ink';
+            var size = Math.max(r.width, r.height);
+            span.style.width = span.style.height = size + 'px';
+            span.style.left = (e.clientX - r.left - size / 2) + 'px';
+            span.style.top = (e.clientY - r.top - size / 2) + 'px';
+            btn.appendChild(span);
+            setTimeout(function () { span.remove(); }, 600);
+          });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>

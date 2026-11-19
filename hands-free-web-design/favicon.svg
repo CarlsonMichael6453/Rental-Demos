@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Hands Free Web Design">
+  <rect width="40" height="40" rx="10" fill="#14261e"/>
+  <circle cx="27" cy="13" r="6.2" fill="#e0a45a"/>
+  <path d="M3.5 32.5 L15.5 15.5 L22 25 L28.5 13.5 L37 32.5 Z" fill="#8fa37a"/>
+  <path d="M3.5 32.5 L15.5 15.5 L22 25 L13 32.5 Z" fill="#2a4f3d"/>
+  <path d="M17.2 15.2 L18.6 18.2 L15.5 15.5 Z" fill="#f3ebe0"/>
+</svg>
